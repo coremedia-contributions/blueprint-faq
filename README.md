@@ -1,2 +1,3 @@
-# CoreMedia Content Cloud - FAQ Extension
+# FAQ Extension
 
+This extension add FAQ functionality to your CoreMedia Blueprint.

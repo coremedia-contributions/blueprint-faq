@@ -1,0 +1,41 @@
+.faq-items-editor {
+  counter-reset: section;
+}
+
+.faq-items-editor .x-tab {
+  display: flex;
+  gap: 1rem;
+}
+
+.faq-items-editor .x-tab:before {
+  counter-increment: section;
+  content: counter(section);
+  display: flex;
+  font-weight: bold;
+  color: #fff;
+  background-color: #555;
+  border-radius: 3px;
+  box-sizing: border-box;
+  min-width: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq-items-editor .x-tab-active:before {
+  background-color: #006cae;
+}
+
+.faq-items-editor .x-tab:first-of-type {
+  margin-top: 20px;
+}
+
+.faq-items-editor .x-tab.x-tab-active.x-tab-default {
+  background: linear-gradient(45deg, #d6f0ff, #efefef);
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.faq-item-fields {
+  border: 3px solid #efefef;
+  border-radius: 8px;
+}

@@ -1,0 +1,23 @@
+"Single FAQ item with the question and answer and optional media."
+type FAQItem {
+  "FAQ item id"
+  id: String!
+
+  "Question text"
+  question: RichText
+
+  "Answer text"
+  answer: RichText
+
+  "Optional media attached to the item"
+  media: [CMMedia]
+}
+
+interface CMFAQ @inherit(from: ["CMTeasable"]) {
+  "list of FAQ items"
+  items: [FAQItem]
+}
+
+type CMFAQImpl implements CMFAQ @inherit(from: ["CMTeasableImpl"]) {
+  items: [FAQItem] @fetch(from: "@faqAdapter.to(#root).faqItems")
+}
