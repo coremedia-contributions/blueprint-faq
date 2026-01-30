@@ -1,7 +1,7 @@
 import Config from "@jangaroo/runtime/Config";
 import ConfigUtils from "@jangaroo/runtime/ConfigUtils";
 import FAQItemFields from "./FAQItemFields";
-import StructSubBean from "@coremedia/studio-client.cap-rest-client-impl/common/impl/StructSubBean";
+import StructSubBean from "@coremedia/studio-client.cap-rest-client/common/impl/StructSubBean";
 import { ValueExpression, ValueExpressionFactory } from "@coremedia/studio-client.client-core";
 import ComponentManager from "@jangaroo/ext-ts/ComponentManager";
 import TabPanel from "@jangaroo/ext-ts/tab/Panel";

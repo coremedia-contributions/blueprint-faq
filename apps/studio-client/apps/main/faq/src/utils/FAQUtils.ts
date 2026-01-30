@@ -2,10 +2,10 @@ import Ext from "@jangaroo/ext-ts";
 import UndocContent from "@coremedia/studio-client.cap-rest-client/content/UndocContent";
 import { ValueExpression, ValueExpressionFactory } from "@coremedia/studio-client.client-core";
 import { Content, ContentPropertyNames, Struct } from "@coremedia/studio-client.cap-rest-client";
-import StructSubBean from "@coremedia/studio-client.cap-rest-client-impl/common/impl/StructSubBean";
+import StructSubBean from "@coremedia/studio-client.cap-rest-client/common/impl/StructSubBean";
 import RichTextPlainTextTransformer
   from "@coremedia/studio-client.cap-base-models/content/RichTextPlainTextTransformer";
-import MarkupImpl from "@coremedia/studio-client.client-core-impl/data/impl/MarkupImpl";
+import MarkupImpl from "@coremedia/studio-client.client-core/data/impl/MarkupImpl";
 import MarkupGrammar from "@coremedia/studio-client.cap-rest-client/common/MarkupGrammar";
 import { int } from "@jangaroo/runtime";
 
