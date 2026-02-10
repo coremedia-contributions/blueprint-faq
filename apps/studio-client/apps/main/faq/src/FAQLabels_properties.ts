@@ -1,13 +1,7 @@
 import { add, moveDown, moveUp, remove, typeObject } from "@coremedia/studio-client.common-icons";
 import { SvgIconUtil } from "@coremedia/studio-client.base-models";
-import typeFAQIcon from "./icons/type-faq.svg";
-import FAQItemFields from "./components/FAQItemFields";
 
 interface FAQLabels_properties {
-  CMFAQ_text: string;
-  CMFAQ_toolTip: string;
-  CMFAQ_icon: string;
-
   FAQItemsPropertyField_title: string;
 
   FAQItemsEditor_deleteItem_text: string;
@@ -31,10 +25,6 @@ interface FAQLabels_properties {
 }
 
 const FAQLabels_properties: FAQLabels_properties = {
-  CMFAQ_text: "FAQ",
-  CMFAQ_toolTip: "FAQ",
-  CMFAQ_icon: SvgIconUtil.getIconStyleClassForSvgIcon(typeFAQIcon),
-
   FAQItemsPropertyField_title: "Questions & Answers",
 
   FAQItemsEditor_deleteItem_text: "Delete Item",

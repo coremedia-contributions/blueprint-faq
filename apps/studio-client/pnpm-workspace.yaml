@@ -1,2 +1,4 @@
 packages:
   - "apps/main/faq"
+  - "apps/workflow/faq"
+  - "shared/js/faq"

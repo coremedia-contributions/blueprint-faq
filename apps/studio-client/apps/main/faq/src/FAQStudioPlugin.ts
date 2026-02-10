@@ -9,7 +9,6 @@ import resourceManager from "@jangaroo/runtime/l10n/resourceManager";
 import CMFAQForm from "./forms/CMFAQForm";
 import FAQLabels_properties from "./FAQLabels_properties";
 import IEditorContext from "@coremedia/studio-client.main.editor-components/sdk/IEditorContext";
-import editorContext from "@coremedia/studio-client.main.editor-components/sdk/editorContext";
 import FAQUtils from "./utils/FAQUtils";
 
 interface FAQStudioPluginConfig extends Config<StudioPlugin> {
@@ -36,14 +35,6 @@ class FAQStudioPlugin extends StudioPlugin {
         }),
 
       ],
-
-      configuration: [
-        new CopyResourceBundleProperties({
-          destination: resourceManager.getResourceBundle(null, ContentTypes_properties),
-          source: resourceManager.getResourceBundle(null, FAQLabels_properties),
-        }),
-      ],
-
     }), config));
   }
 

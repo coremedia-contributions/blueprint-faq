@@ -1,0 +1,38 @@
+{
+  "name": "@coremedia-blueprint/studio-client.shared.faq",
+  "version": "1.0.0-SNAPSHOT",
+  "author": "CoreMedia GmbH",
+  "license": "CoreMedia Open Source License",
+  "dependencies": {
+    "@coremedia/studio-client.cap-base-models": "catalog:"
+  },
+  "devDependencies": {
+    "@coremedia/studio-client.eslint-config": "catalog:",
+    "@jangaroo/build": "catalog:",
+    "@jangaroo/core": "catalog:",
+    "eslint": "catalog:",
+    "rimraf": "catalog:"
+  },
+  "scripts": {
+    "clean": "rimraf ./dist && rimraf ./build",
+    "build": "jangaroo build",
+    "watch": "jangaroo watch",
+    "lint": "eslint"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./dist/src/index.js"
+    }
+  },
+  "publishConfig": {
+    "directory": "dist",
+    "linkDirectory": false,
+    "exports": {
+      ".": {
+        "types": "./src/index.d.ts",
+        "default": "./src/index.js"
+      }
+    }
+  }
+}

@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@coremedia-blueprint/studio-client.main.blueprint-forms": "workspace:*",
+    "@coremedia-blueprint/studio-client.shared.faq": "workspace:*",
     "@coremedia/studio-client.base-models": "catalog:",
     "@coremedia/studio-client.cap-base-models": "catalog:",
     "@coremedia/studio-client.cap-rest-client": "catalog:",

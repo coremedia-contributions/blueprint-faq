@@ -12,6 +12,9 @@
   "references": [
     {
       "path": "../../../../../../../../../apps/studio-client/apps/main/blueprint-forms/src"
+    },
+    {
+      "path": "../../../../shared/js/faq/src"
     }
   ]
 }

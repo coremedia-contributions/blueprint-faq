@@ -1,0 +1,40 @@
+{
+  "name": "@coremedia-blueprint/studio-client.workflow.faq-studio",
+  "author": "Blueprint",
+  "version": "1.0.0-SNAPSHOT",
+  "private": true,
+  "dependencies": {
+    "@coremedia-blueprint/studio-client.shared.faq": "workspace:*"
+  },
+  "devDependencies": {
+    "@jangaroo/build": "catalog:",
+    "@jangaroo/core": "catalog:",
+    "eslint": "catalog:",
+    "rimraf": "catalog:"
+  },
+  "scripts": {
+    "clean": "rimraf ./dist && rimraf ./build",
+    "build": "jangaroo build",
+    "watch": "jangaroo watch",
+    "lint": "eslint"
+  },
+  "exports": {
+    "./*": {
+      "types": "./src/*.ts",
+      "default": "./dist/src/*.js"
+    }
+  },
+  "coremedia": {
+    "projectExtensionFor": "studio-client.workflow"
+  },
+  "publishConfig": {
+    "directory": "dist",
+    "linkDirectory": false,
+    "exports": {
+      "./*": {
+        "types": "./src/*.d.ts",
+        "default": "./src/*.js"
+      }
+    }
+  }
+}
