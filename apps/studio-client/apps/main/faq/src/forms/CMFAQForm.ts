@@ -1,30 +1,18 @@
-import BlueprintTabs_properties from "@coremedia-blueprint/studio-client.main.blueprint-forms/BlueprintTabs_properties";
 import DocumentForm from "@coremedia/studio-client.main.editor-components/sdk/premular/DocumentForm";
 import DocumentTabPanel from "@coremedia/studio-client.main.editor-components/sdk/premular/DocumentTabPanel";
 import Config from "@jangaroo/runtime/Config";
 import ConfigUtils from "@jangaroo/runtime/ConfigUtils";
-import SettingsDocumentForm
-  from "@coremedia-blueprint/studio-client.main.blueprint-forms/custom/forms/SettingsDocumentForm";
-import InfoDocumentForm from "@coremedia-blueprint/studio-client.main.blueprint-forms/custom/forms/InfoDocumentForm";
-import TagsDocumentForm from "@coremedia-blueprint/studio-client.main.blueprint-forms/custom/forms/TagsDocumentForm";
-import MetadataDocumentForm
-  from "@coremedia-blueprint/studio-client.main.blueprint-forms/custom/forms/MetadataDocumentForm";
-import TeaserDocumentForm
-  from "@coremedia-blueprint/studio-client.main.blueprint-forms/custom/forms/TeaserDocumentForm";
-import MediaDocumentForm
-  from "@coremedia-blueprint/studio-client.main.blueprint-forms/forms/containers/MediaDocumentForm";
+import BlueprintTabs_properties from "@coremedia-blueprint/studio-client.main.blueprint-forms/BlueprintTabs_properties";
+import DefaultExtraDataForm from "@coremedia-blueprint/studio-client.main.blueprint-forms/forms/components/DefaultExtraDataForm";
+import DetailsDocumentForm from "@coremedia-blueprint/studio-client.main.blueprint-forms/forms/containers/DetailsDocumentForm";
+import MediaDocumentForm from "@coremedia-blueprint/studio-client.main.blueprint-forms/forms/containers/MediaDocumentForm";
+import MultiLanguageDocumentForm from "@coremedia-blueprint/studio-client.main.blueprint-forms/forms/containers/MultiLanguageDocumentForm";
+import RelatedDocumentForm from "@coremedia-blueprint/studio-client.main.blueprint-forms/forms/containers/RelatedDocumentForm";
+import TeaserDocumentForm from "@coremedia-blueprint/studio-client.main.blueprint-forms/forms/containers/TeaserDocumentForm";
+import ValidityDocumentForm from "@coremedia-blueprint/studio-client.main.blueprint-forms/forms/containers/ValidityDocumentForm";
+import ViewTypeSelectorForm from "@coremedia-blueprint/studio-client.main.blueprint-forms/forms/containers/ViewTypeSelectorForm";
 import FAQItemsPropertyField from "../fields/FAQItemsPropertyField";
-import DetailsDocumentForm
-  from "@coremedia-blueprint/studio-client.main.blueprint-forms/forms/containers/DetailsDocumentForm";
-import RelatedTabDocumentForm
-  from "@coremedia-blueprint/studio-client.main.blueprint-forms/custom/forms/RelatedTabDocumentForm";
-import AddItemsPlugin from "@coremedia/studio-client.ext.ui-components/plugins/AddItemsPlugin";
-import AuthorLinkListDocumentForm
-  from "@coremedia-blueprint/studio-client.main.blueprint-forms/forms/containers/AuthorLinkListDocumentForm";
-import SEODocumentForm from "@coremedia-blueprint/studio-client.main.blueprint-forms/custom/forms/SEODocumentForm";
-import StructPropertyField
-  from "@coremedia/studio-client.main.editor-components/sdk/premular/fields/struct/StructPropertyField";
-import Component from "@jangaroo/ext-ts/Component";
+import MetaDataWithoutSearchableForm from "@coremedia-blueprint/studio-client.main.blueprint-forms/forms/containers/MetaDataWithoutSearchableForm";
 
 interface CMFAQFormConfig extends Config<DocumentTabPanel> {
 }
@@ -43,40 +31,19 @@ class CMFAQForm extends DocumentTabPanel {
           items: [
             Config(DetailsDocumentForm),
             Config(FAQItemsPropertyField),
-            Config(MediaDocumentForm)
+            Config(TeaserDocumentForm, {
+              bindTo: config.bindTo,
+              collapsed: true,
+            }),
+            Config(MediaDocumentForm, { bindTo: config.bindTo }),
+            Config(RelatedDocumentForm, { bindTo: config.bindTo }),
+            Config(ViewTypeSelectorForm, { bindTo: config.bindTo }),
+            Config(ValidityDocumentForm, { bindTo: config.bindTo }),
           ]
         }),
-        Config(RelatedTabDocumentForm, {
-          ...ConfigUtils.append({
-            plugins: [
-              Config(AddItemsPlugin, {
-                items: [Config(AuthorLinkListDocumentForm, { collapsed: true })]
-              })
-            ]
-          })
-        }),
-        Config(TeaserDocumentForm, { withPictures: false, autoHide: false }),
-        Config(SEODocumentForm),
-        Config(TagsDocumentForm),
-        Config(MetadataDocumentForm),
-        Config(SettingsDocumentForm, {
-          ...ConfigUtils.append(({
-            plugins: [
-              Config(AddItemsPlugin, {
-                items: [
-                  Config(StructPropertyField, {
-                    propertyName: "questionsAnswers",
-                  })
-                ],
-                recursive: true,
-                after: [
-                  Config(Component, { itemId: "localSettings" })
-                ],
-              })
-            ]
-          }))
-        }),
-        Config(InfoDocumentForm)
+        Config(DefaultExtraDataForm),
+        Config(MultiLanguageDocumentForm, { bindTo: config.bindTo }),
+        Config(MetaDataWithoutSearchableForm),
       ]
     }), config));
   }
