@@ -7,8 +7,8 @@ import SettingsDocumentForm
   from "@coremedia-blueprint/studio-client.main.blueprint-forms/custom/forms/SettingsDocumentForm";
 import InfoDocumentForm from "@coremedia-blueprint/studio-client.main.blueprint-forms/custom/forms/InfoDocumentForm";
 import TagsDocumentForm from "@coremedia-blueprint/studio-client.main.blueprint-forms/custom/forms/TagsDocumentForm";
-import MetadataDocumentForm
-  from "@coremedia-blueprint/studio-client.main.blueprint-forms/custom/forms/MetadataDocumentForm";
+import ValidityTab
+  from "@coremedia-blueprint/studio-client.main.blueprint-forms/custom/forms/ValidityTab";
 import TeaserDocumentForm
   from "@coremedia-blueprint/studio-client.main.blueprint-forms/custom/forms/TeaserDocumentForm";
 import MediaDocumentForm
@@ -58,7 +58,7 @@ class CMFAQForm extends DocumentTabPanel {
         Config(TeaserDocumentForm, { withPictures: false, autoHide: false }),
         Config(SEODocumentForm),
         Config(TagsDocumentForm),
-        Config(MetadataDocumentForm),
+        Config(ValidityTab),
         Config(SettingsDocumentForm, {
           ...ConfigUtils.append(({
             plugins: [
